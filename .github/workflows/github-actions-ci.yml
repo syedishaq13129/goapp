@@ -36,7 +36,7 @@ jobs:
       run: |
         /opt/sonar-scanner/bin/sonar-scanner \
            -Dsonar.host.url=http://http://13.234.10.249:9000/ \
-           -Dsonar.login=fcaf893b95cd5ea69ed8e63891dded3e51a1a250 \
+           -Dsonar.login=10f95f89cae3a69b6a6a622e0780854d037c3e3c \
            -Dsonar.projectKey=golang \
            -Dsonar.projectName=golang \
            -Dsonar.sources=.
