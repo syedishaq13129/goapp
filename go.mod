@@ -1,4 +1,3 @@
-module go.tmz.dev/musttag
-
+module mymodule
 
 go 1.13
