@@ -3,7 +3,6 @@ name: Go Lint
 on:
   push:
     branches:
-      - master
       - main
   pull_request:
 
@@ -26,3 +25,4 @@ jobs:
         uses: golangci/golangci-lint-action@v3
         with:
           version: v1.54
+          args: --out-format csv ./...
