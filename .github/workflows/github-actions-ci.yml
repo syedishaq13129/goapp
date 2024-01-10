@@ -1,0 +1,42 @@
+name: Go SAST Scan
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sast-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.17
+
+      - name: Build and run tests
+        run: |
+          go build -v
+          go test -v ./...
+
+      - name: Run SAST Scan
+        uses: AppThreat/sast-scan-action@master
+        with:
+          type: "go"
+
+  upload-reports:
+    runs-on: ubuntu-latest
+    needs: sast-scan
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Upload SAST Scan reports
+        uses: actions/upload-artifact@v2
+        with:
+          name: sast-reports
+          path: reports
