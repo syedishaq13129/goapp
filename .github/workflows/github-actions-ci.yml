@@ -35,7 +35,7 @@ jobs:
     - name: SonarQube analysis
       run: |
         /opt/sonar-scanner/bin/sonar-scanner \
-           -Dsonar.host.url=http://13.200.137.62:9000/ \
+           -Dsonar.host.url=http://http://13.234.10.249:9000/ \
            -Dsonar.login=fcaf893b95cd5ea69ed8e63891dded3e51a1a250 \
            -Dsonar.projectKey=golang \
            -Dsonar.projectName=golang \
